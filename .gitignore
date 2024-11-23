@@ -4,3 +4,6 @@
 # Deno
 *.tsbuildinfo
 coverage
+
+# Build output
+src/public/main.css
