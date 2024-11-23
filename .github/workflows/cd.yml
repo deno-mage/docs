@@ -48,4 +48,4 @@ jobs:
         with:
           project: "docs"
           entrypoint: "./src/main.tsx"
-          root: "./src"
+          root: "."
