@@ -6,6 +6,7 @@ import {
 } from "@mage/server";
 import { IndexPage } from "./pages/index.tsx";
 
+const port = Deno.env.get("PORT") ?? "8000";
 const isDeployed = Deno.env.has("DENO_DEPLOYMENT_ID");
 
 const app = new MageApp();
@@ -21,7 +22,7 @@ app.get("/", (context) => {
 app.get("/public/*", useServeFiles({ directory: "./public" }));
 
 app.run({
-  port: 8000,
+  port: parseInt(port, 10),
   onListen({ hostname, port }) {
     console.log(`Listening on http://${hostname}:${port}`);
   },
