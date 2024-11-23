@@ -1,13 +1,14 @@
 {
   "tasks": {
-    "dev": "deno run --allow-all --watch ./srcmain.tsx",
+    "dev": "deno run --allow-all --watch ./src/main.tsx",
     "css": "deno run --allow-all npm:tailwindcss -i ./src/main.css -o ./src/public/main.css --minify",
     "lint": "deno lint",
     "format": "deno fmt",
     "check": "deno check ."
   },
   "imports": {
-    "@mage/server": "jsr:@mage/server@^0.8.6",
+    "@mage/server": "jsr:@mage/server@^0.9.0",
+    "@std/path": "jsr:@std/path@^1.0.8",
     "preact": "npm:preact@^10.25.0",
     "tailwindcss": "npm:tailwindcss@^3.4.15"
   },

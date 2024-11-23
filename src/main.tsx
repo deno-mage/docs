@@ -5,6 +5,7 @@ import {
   useServeFiles,
 } from "@mage/server";
 import { IndexPage } from "./pages/index.tsx";
+import { resolve } from "jsr:@std/path";
 
 const port = Deno.env.get("PORT") ?? "8000";
 const isDeployed = Deno.env.has("DENO_DEPLOYMENT_ID");
@@ -19,11 +20,14 @@ app.get("/", (context) => {
   context.render(StatusCode.OK, <IndexPage />);
 });
 
-app.get("/public/*", useServeFiles({ directory: "./public" }));
+app.get(
+  "/public/*",
+  useServeFiles({ directory: resolve(Deno.cwd(), "./src/public") }),
+);
 
-app.run({
-  port: parseInt(port, 10),
-  onListen({ hostname, port }) {
-    console.log(`Listening on http://${hostname}:${port}`);
+Deno.serve(
+  {
+    port: Number(port),
   },
-});
+  app.build(),
+);
