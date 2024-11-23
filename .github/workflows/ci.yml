@@ -40,6 +40,6 @@ jobs:
       - name: Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "docs"
+          project: "mage-docs"
           entrypoint: "./src/main.tsx"
           root: "."
