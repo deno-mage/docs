@@ -42,3 +42,10 @@ jobs:
 
       - name: Build
         run: deno task css
+
+      - name: Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: "mage-docs"
+          entrypoint: "./src/main.tsx"
+          root: "."
