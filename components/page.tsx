@@ -1,7 +1,7 @@
-import type { VNode } from "preact";
+import type { ComponentChildren } from "preact";
 
 interface PageProps {
-  children: VNode;
+  children: ComponentChildren;
   title?: string;
   description: string;
 }
@@ -16,7 +16,7 @@ export const Page = (props: PageProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="/public/main.css" />
       </head>
-      <body>{props.children}</body>
+      <body className="subpixel-antialiased">{props.children}</body>
     </html>
   );
 };

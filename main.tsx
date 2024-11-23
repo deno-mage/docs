@@ -18,7 +18,7 @@ app.get("/", (context) => {
   context.render(StatusCode.OK, <IndexPage />);
 });
 
-app.get("/public/*", useServeFiles({ directory: "./docs/public" }));
+app.get("/public/*", useServeFiles({ directory: "./public" }));
 
 app.run({
   port: 8000,
