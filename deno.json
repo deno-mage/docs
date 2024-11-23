@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "dev": "deno run --allow-all --watch main.tsx",
-    "css": "deno run --allow-all npm:tailwindcss -i main.css -o public/main.css --minify",
+    "dev": "deno run --allow-all --watch ./srcmain.tsx",
+    "css": "deno run --allow-all npm:tailwindcss -i ./src/main.css -o ./src/public/main.css --minify",
     "lint": "deno lint",
     "format": "deno fmt",
     "check": "deno check ."
