@@ -12,11 +12,10 @@ export const Page = (props: PageProps) => {
     <html lang="en">
       <head>
         <meta charset="utf-8" />
-        <title>Mage Server {props.title && `| ${props.title}`}</title>
+        <title>Mage {props.title && `| ${props.title}`}</title>
         <meta name="description" content={props.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="/public/main.css" />
-
         {/* Highlight.js */}
         <link
           rel="stylesheet"

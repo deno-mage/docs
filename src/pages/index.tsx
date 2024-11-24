@@ -21,7 +21,7 @@ export const IndexPage = () => {
         <LeftRightSection>
           <InnerLeftSection>
             <div className="text-center lg:text-right">
-              <Heading level={1}>Mage Server</Heading>
+              <Heading level={1}>Mage</Heading>
               <p className="text-lg">
                 Build web applications with{" "}
                 <Link href="https://deno.com">Deno</Link>
