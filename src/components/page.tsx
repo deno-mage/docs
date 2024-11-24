@@ -34,10 +34,7 @@ export const Page = (props: PageProps) => {
             </div>
             <div className="flex gap-4 items-center justify-between w-full">
               <div aria-hidden>
-                <span className="text-3xl font-bold block">Mage Server</span>
-                <span className="text-slate-500">
-                  Build web applications with Deno and Preact
-                </span>
+                <span className="text-3xl font-bold block">Mage</span>
               </div>
               <div>
                 <GitHub />

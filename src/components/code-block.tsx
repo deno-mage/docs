@@ -6,8 +6,8 @@ interface CodeBlockProps {
 
 export const CodeBlock = (props: CodeBlockProps) => {
   return (
-    <pre className="inline-block rounded-lg overflow-hidden">
-      <code className="language-typescript p-6">{props.children}</code>
+    <pre className="rounded-lg overflow-hidden">
+      <code className="language-typescript">{props.children}</code>
     </pre>
   );
 };
