@@ -1,7 +1,7 @@
-<h1 align="center">Mage Docs</h1>
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/558a5409-0a48-4ef7-a119-c3c4b251dba8"/>
-</div>
+<p align="center" style="color: #343a40">
+  <img src="https://raw.githubusercontent.com/deno-mage/docs/main/public/images/mage.png" alt="Emotion logo" height="150" width="150">
+  <h1 align="center">Mage Docs</h1>
+</p>
 <div align="center">
   Documentation for <a href="https://jsr.io/@mage/server">@mage/server</a>
 </div>
