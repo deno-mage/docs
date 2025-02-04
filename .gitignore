@@ -6,4 +6,4 @@
 coverage
 
 # Build output
-src/public/main.css
+public/main.css

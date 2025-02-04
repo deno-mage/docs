@@ -40,7 +40,7 @@ export const Page = (props: PageProps) => {
               </div>
             </div>
           </header>
-          <main className="p-4">{props.children}</main>
+          <main className="py-4">{props.children}</main>
         </div>
         {/* Highlight.js */}
         <script>hljs.highlightAll();</script>

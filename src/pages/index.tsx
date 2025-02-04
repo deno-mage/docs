@@ -18,6 +18,21 @@ export const IndexPage = () => {
             Home
           </Breadcrumb>
         </BreadcrumbList>
+        <nav>
+          <ul className="flex flex-wrap gap-4 justify-center">
+            <li>
+              <Link href="/getting-started">
+                <span>Getting Started</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/middleware">Middleware</Link>
+            </li>
+            <li>
+              <Link href="/routing">Routing</Link>
+            </li>
+          </ul>
+        </nav>
         <LeftRightSection>
           <InnerLeftSection>
             <div className="text-center lg:text-right">
@@ -40,25 +55,10 @@ app.get("/", (context) => {
   context.render(StatusCode.OK, <h1>Hello, World!</h1>);
 });
 
-app.post("/", (context) => {
-  context.text(StatusCode.OK, "Hello, World!");
-});
-
 Deno.serve(app.build());`}
             </CodeBlock>
           </InnerRightSection>
         </LeftRightSection>
-        <ul className="flex gap-4 justify-center">
-          <li>
-            <Link href="/getting-started">Getting Started</Link>
-          </li>
-          <li>
-            <Link href="/middleware">Middleware</Link>
-          </li>
-          <li>
-            <Link href="/routing">Routing</Link>
-          </li>
-        </ul>
       </div>
     </Page>
   );
