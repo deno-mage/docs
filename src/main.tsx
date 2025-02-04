@@ -29,7 +29,7 @@ app.get("/routing", (context) => {
 
 app.get(
   "/public/*",
-  useServeFiles({ directory: resolve(Deno.cwd(), "./src/public") }),
+  useServeFiles({ directory: resolve(Deno.cwd(), "./public") }),
 );
 
 Deno.serve(app.build());
