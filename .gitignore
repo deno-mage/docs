@@ -7,3 +7,6 @@ coverage
 
 # Build output
 public/main.css
+
+# Node
+node_modules

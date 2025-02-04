@@ -1,7 +1,7 @@
 {
   "tasks": {
     "dev": "deno run --allow-all --watch ./src/main.tsx",
-    "css": "deno run --allow-all npm:tailwindcss -i ./src/main.css -o ./public/main.css --minify",
+    "css": "deno run --allow-all npm:@tailwindcss/cli -i ./src/main.css -o ./public/main.css --minify",
     "lint": "deno lint",
     "format": "deno fmt",
     "check": "deno check ."
@@ -9,11 +9,13 @@
   "imports": {
     "@mage/server": "jsr:@mage/server@^0.9.0",
     "@std/path": "jsr:@std/path@^1.0.8",
+    "@tailwindcss/cli": "npm:@tailwindcss/cli@^4.0.3",
     "preact": "npm:preact@^10.25.0",
-    "tailwindcss": "npm:tailwindcss@^3.4.15"
+    "tailwindcss": "npm:tailwindcss@^4.0.3"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
-  }
+  },
+  "nodeModulesDir": "auto"
 }
