@@ -11,7 +11,7 @@ const SIMPLE_MIDDLEWARE = `app.get("/", (context) => {
 export const MiddlewarePage = () => {
   return (
     <Page description="Learn about Mage middleware" title="Middleware">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 max-w-full">
         <BreadcrumbList>
           <Breadcrumb href="/">Home</Breadcrumb>
           <Breadcrumb href="/middleware" isCurrent>
@@ -21,8 +21,13 @@ export const MiddlewarePage = () => {
 
         <Heading level={1}>Middleware</Heading>
         <Text size="lg" as="p">
-          APIs are composed of stacked middleware. A simple middleware that sets
-          a response looks like this.
+          Mage apps are composed of stacked middleware. Every request is handled
+          by each middleware in the order they are added.
+        </Text>
+
+        <Heading level={2}>Middleware</Heading>
+        <Text as="p">
+          A simple middleware that sets a response looks like this.
         </Text>
         <CodeBlock>{SIMPLE_MIDDLEWARE}</CodeBlock>
       </div>
