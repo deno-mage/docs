@@ -1,5 +1,6 @@
 import type { ComponentChildren } from "preact";
 import { GitHub } from "./github.tsx";
+import { NavList } from "./nav-list.tsx";
 
 interface PageProps {
   children: ComponentChildren;
@@ -26,7 +27,7 @@ export const Page = (props: PageProps) => {
         {/* Highlight.js - end */}
       </head>
       <body className="subpixel-antialiased bg-white text-slate-800">
-        <div className="max-w-screen-xl mx-auto px-4">
+        <div className="max-w-screen-lg mx-auto px-4">
           <header className="flex gap-4 items-center p-4 border-b-2 border-slate-800">
             <div className="text-6xl" aria-hidden>
               🧙‍♂️
@@ -40,7 +41,15 @@ export const Page = (props: PageProps) => {
               </div>
             </div>
           </header>
-          <main className="py-4">{props.children}</main>
+
+          <div className="flex flex-wrap gap-4 py-4">
+            <main className="flex flex-wrap gap-4 flex-grow">
+              {props.children}
+            </main>
+            <aside>
+              <NavList />
+            </aside>
+          </div>
         </div>
         {/* Highlight.js */}
         <script>hljs.highlightAll();</script>
