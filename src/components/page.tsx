@@ -42,8 +42,8 @@ export const Page = (props: PageProps) => {
             </div>
           </header>
 
-          <div className="flex flex-wrap gap-4 py-4">
-            <main className="flex flex-wrap gap-4 flex-grow">
+          <div className="flex flex-wrap gap-4 py-4 max-w-full">
+            <main className="flex flex-wrap gap-4 flex-grow max-w-full">
               {props.children}
             </main>
             <aside>

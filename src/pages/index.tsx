@@ -18,34 +18,33 @@ Deno.serve(app.build());`;
 export const IndexPage = () => {
   return (
     <Page description="Build web applications with Deno and Preact">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 max-w-full">
         <BreadcrumbList>
           <Breadcrumb href="/" isCurrent>
             Home
           </Breadcrumb>
         </BreadcrumbList>
-        <div className="flex flex-col gap-4">
-          <Heading level="hero">Mage</Heading>
-          <Text size="lg" as="p">
-            Build web applications with{" "}
-            <Link
-              href="https://deno.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Deno
-            </Link>
-            {" and "}
-            <Link
-              href="https://preactjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Preact
-            </Link>
-          </Text>
-          <CodeBlock>{EXAMPLE_APP}</CodeBlock>
-        </div>
+        <Heading level="hero">Mage</Heading>
+        <Text size="lg" as="p">
+          Build web applications with{" "}
+          <Link
+            href="https://deno.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Deno
+          </Link>
+          {" and "}
+          <Link
+            href="https://preactjs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Preact
+          </Link>{" "}
+          that feel familiar.
+        </Text>
+        <CodeBlock>{EXAMPLE_APP}</CodeBlock>
       </div>
     </Page>
   );
