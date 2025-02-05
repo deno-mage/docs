@@ -6,7 +6,7 @@ interface CodeBlockProps {
 
 export const CodeBlock = (props: CodeBlockProps) => {
   return (
-    <pre className="rounded-lg overflow-hidden">
+    <pre className="rounded-lg overflow-hidden max-w-prose">
       <code className="language-typescript">{props.children}</code>
     </pre>
   );

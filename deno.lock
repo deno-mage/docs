@@ -2,6 +2,8 @@
   "version": "4",
   "specifiers": {
     "jsr:@mage/server@0.9": "0.9.0",
+    "jsr:@preact-icons/common@^1.0.12": "1.0.12",
+    "jsr:@preact-icons/fa@^1.0.12": "1.0.12",
     "jsr:@std/cli@^1.0.8": "1.0.9",
     "jsr:@std/encoding@^1.0.5": "1.0.6",
     "jsr:@std/fmt@^1.0.3": "1.0.3",
@@ -16,6 +18,8 @@
     "npm:@tailwindcss/cli@*": "4.0.3",
     "npm:@tailwindcss/cli@^4.0.3": "4.0.3",
     "npm:preact-render-to-string@^6.5.11": "6.5.11_preact@10.25.0",
+    "npm:preact@10.22.1": "10.22.1",
+    "npm:preact@^10.22.1": "10.25.0",
     "npm:preact@^10.25.0": "10.25.0",
     "npm:tailwindcss@^4.0.3": "4.0.3"
   },
@@ -26,8 +30,22 @@
         "jsr:@std/fs",
         "jsr:@std/http",
         "jsr:@std/path@^1.0.8",
-        "npm:preact",
-        "npm:preact-render-to-string"
+        "npm:preact-render-to-string",
+        "npm:preact@^10.25.0"
+      ]
+    },
+    "@preact-icons/common@1.0.12": {
+      "integrity": "f7d7329d55c2753b0162438b120b638e5058fa406f49fe6b422e3b0694f6e0c1",
+      "dependencies": [
+        "npm:preact@^10.22.1",
+        "npm:preact@^10.25.0"
+      ]
+    },
+    "@preact-icons/fa@1.0.12": {
+      "integrity": "c294438032825a5be3009fde2633b57fea2db08ae69ea826cce72e81a43373f1",
+      "dependencies": [
+        "jsr:@preact-icons/common",
+        "npm:preact@10.22.1"
       ]
     },
     "@std/cli@1.0.9": {
@@ -314,8 +332,11 @@
     "preact-render-to-string@6.5.11_preact@10.25.0": {
       "integrity": "sha512-ubnauqoGczeGISiOh6RjX0/cdaF8v/oDXIjO85XALCQjwQP+SB4RDXXtvZ6yTYSjG+PC1QRP2AhPgCEsM2EvUw==",
       "dependencies": [
-        "preact"
+        "preact@10.25.0"
       ]
+    },
+    "preact@10.22.1": {
+      "integrity": "sha512-jRYbDDgMpIb5LHq3hkI0bbl+l/TQ9UnkdQ0ww+lp+4MMOdqaUYdFc5qeyP+IV8FAd/2Em7drVPeKdQxsiWCf/A=="
     },
     "preact@10.25.0": {
       "integrity": "sha512-6bYnzlLxXV3OSpUxLdaxBmE7PMOu0aR3pG6lryK/0jmvcDFPlcXGQAt5DpK3RITWiDrfYZRI0druyaK/S9kYLg=="
@@ -336,6 +357,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@mage/server@0.9",
+      "jsr:@preact-icons/fa@^1.0.12",
       "jsr:@std/path@^1.0.8",
       "npm:@tailwindcss/cli@^4.0.3",
       "npm:preact@^10.25.0",
