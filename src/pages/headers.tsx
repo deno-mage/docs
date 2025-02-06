@@ -13,7 +13,7 @@ const EDIT_HEADERS = `app.get("/", (context) => {
   context.response.headers.delete("Content-Type", "text/plain");
 });`;
 
-const CACHE_CONTROL = `app.get("/", (context) => {
+const CACHE_CONTROL = `app.use((context) => {
   cacheControl(context, {
     maxAge: 60,
   });
@@ -21,7 +21,7 @@ const CACHE_CONTROL = `app.get("/", (context) => {
   context.text(StatusCode.OK, "Hello, World!");
 });`;
 
-const CSP = `get("/", (context) => {
+const CSP = `app.use((context) => {
   contentSecurityPolicy(context, {
     directives: {
       defaultSrc: "'self'",

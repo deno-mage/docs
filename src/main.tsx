@@ -8,7 +8,9 @@ import { ResponsesPage } from "./pages/responses.tsx";
 import { RequestsPage } from "./pages/requests.tsx";
 import { CookiesPage } from "./pages/cookies.tsx";
 import { HeadersPage } from "./pages/headers.tsx";
-import { PrebuiltMiddlewaresPage } from "./pages/prebuilt-middlewares.tsx";
+import { CorsPage } from "./pages/cors.tsx";
+import { SecurityHeadersPage } from "./pages/security-headers.tsx";
+import { ServingFilesPage } from "./pages/serving-files.tsx";
 
 const isDeployed = Deno.env.has("DENO_DEPLOYMENT_ID");
 
@@ -43,8 +45,14 @@ app.get("/cookies", async (context) => {
 app.get("/headers", async (context) => {
   await context.render(StatusCode.OK, <HeadersPage />);
 });
-app.get("/prebuilt-middlewares", async (context) => {
-  await context.render(StatusCode.OK, <PrebuiltMiddlewaresPage />);
+app.get("/cors", async (context) => {
+  await context.render(StatusCode.OK, <CorsPage />);
+});
+app.get("/security-headers", async (context) => {
+  await context.render(StatusCode.OK, <SecurityHeadersPage />);
+});
+app.get("/serving-files", async (context) => {
+  await context.render(StatusCode.OK, <ServingFilesPage />);
 });
 
 app.get(
