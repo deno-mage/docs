@@ -5,9 +5,11 @@ import { Breadcrumb, BreadcrumbList } from "../components/breadcrumbs.tsx";
 import { Text } from "../components/text.tsx";
 import { Link } from "../components/link.tsx";
 
-const HEADERS = `app.get("/", (context) => {
+const EXAMPLE = `app.get("/", (context) => {
   context.response.headers.set("Content-Type", "text/plain");
   context.response.headers.delete("Content-Type", "text/plain");
+  
+  context.text(StatusCode.OK, "Hello, World!");
 });`;
 
 const TEXT = `app.get("/", (context) => {
@@ -50,36 +52,34 @@ const SERVE_FILE = `app.get("/file", async (context) => {
   await context.serveFile("path/to/file.txt");
 });`;
 
-export const ResponsePage = () => {
+export const ResponsesPage = () => {
   return (
-    <Page description="Learn about Mage context" title="Context">
+    <Page description="Learn about Mage" title="Responses">
       <div className="flex flex-col gap-4 max-w-full">
         <BreadcrumbList>
           <Breadcrumb href="/">Home</Breadcrumb>
-          <Breadcrumb href="/response" isCurrent>
-            Response
+          <Breadcrumb href="/responses" isCurrent>
+            Responses
           </Breadcrumb>
         </BreadcrumbList>
 
-        <Heading level={1}>Response</Heading>
+        <Heading level={1}>Responses</Heading>
         <Text as="p">
-          The response is available on the context object from the beginning of
-          the chain. This is the exact response object that will be sent to the
-          client.
+          You have full access to the raw response object in all middleware.
         </Text>
 
-        <Heading level={2}>Basics</Heading>
+        <Heading level={2}>Response</Heading>
         <Text as="p">
           The response instance is available at{" "}
-          <Text as="code">context.response</Text>. You can use it to configure
-          the response details such as headers.
+          <Text as="code">context.response</Text>. You can use it to set details
+          on the response like headers and content.
         </Text>
-        <CodeBlock>{HEADERS}</CodeBlock>
+        <CodeBlock>{EXAMPLE}</CodeBlock>
 
-        <Heading level={2}>Response utility methods</Heading>
+        <Heading level={2}>Utility methods</Heading>
         <Text as="p">
           The context has utility methods to set the response content and handle
-          the request.
+          the request more conveniently.
         </Text>
 
         <Heading level={3}>Text</Heading>

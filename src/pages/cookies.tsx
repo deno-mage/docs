@@ -18,7 +18,7 @@ const DELETE_COOKIES = `app.use((context) => {
 
 export const CookiesPage = () => {
   return (
-    <Page description="Learn about Mage context" title="Context">
+    <Page description="Learn about Mage" title="Cookies">
       <div className="flex flex-col gap-4 max-w-full">
         <BreadcrumbList>
           <Breadcrumb href="/">Home</Breadcrumb>
@@ -29,7 +29,8 @@ export const CookiesPage = () => {
 
         <Heading level={1}>Cookies</Heading>
         <Text as="p">
-          A cookie store is available at on the context passed into middleware.
+          A cookie store is available in all middleware via{" "}
+          <Text as="code">context.cookies</Text>.
         </Text>
 
         <Heading level={3}>Get</Heading>
