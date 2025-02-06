@@ -12,7 +12,7 @@ app.get("/async", async (context) => {
   await context.render(StatusCode.OK, <h1>Hello, World!</h1>);
 });`;
 
-const CHAINING_MIDDLEWARE = `// Log the request
+const CHAINING = `// Log the request
 app.use((context, next) => {
   console.log(context.request.method, context.request.url);
   next();
@@ -29,11 +29,11 @@ app.get((context) => {
   context.text(StatusCode.OK, "Hello, World!");
 });`;
 
-const USE_REGISTRATION_MIDDLEWARE = `app.use((context, next) => {
+const USE = `app.use((context, next) => {
   next();
 });`;
 
-const VERB_REGISTRATION_MIDDLEWARE = `app.get("/", (context) => {
+const VERB = `app.get("/", (context) => {
   context.text(StatusCode.OK, "Hello, World!");
 });
 
@@ -41,7 +41,7 @@ app.post("/", (context) => {
   context.text(StatusCode.OK, "Hello, World!");
 });`;
 
-const MULTI_USE_REGISTRATION_MIDDLEWARE = `app.use(
+const MULTI = `app.use(
   (context, next) => {
     console.log("First middleware");
     next();
@@ -54,7 +54,7 @@ const MULTI_USE_REGISTRATION_MIDDLEWARE = `app.use(
 
 export const MiddlewarePage = () => {
   return (
-    <Page description="Learn about Mage middleware" title="Middleware">
+    <Page description="Learn about Mage" title="Middleware">
       <div className="flex flex-col gap-4 max-w-full">
         <BreadcrumbList>
           <Breadcrumb href="/">Home</Breadcrumb>
@@ -88,25 +88,25 @@ export const MiddlewarePage = () => {
           calls the next via the <Text as="code">next()</Text> function.
         </Text>
         <Text as="p">The following example shows this pattern in action.</Text>
-        <CodeBlock>{CHAINING_MIDDLEWARE}</CodeBlock>
+        <CodeBlock>{CHAINING}</CodeBlock>
 
         <Heading level={2}>Registration</Heading>
         <Text as="p">
           You register middleware to run on every request using the{" "}
           <Text as="code">app.use()</Text> method.
         </Text>
-        <CodeBlock>{USE_REGISTRATION_MIDDLEWARE}</CodeBlock>
+        <CodeBlock>{USE}</CodeBlock>
         <Text as="p">
           You can also register middleware to run on specific routes using the
           HTTP verb methods like <Text as="code">app.get()</Text> and{" "}
           <Text as="code">app.post()</Text>.
         </Text>
-        <CodeBlock>{VERB_REGISTRATION_MIDDLEWARE}</CodeBlock>
+        <CodeBlock>{VERB}</CodeBlock>
         <Text as="p">
           You can register multiple middleware functions at once. These are
           executed in order.
         </Text>
-        <CodeBlock>{MULTI_USE_REGISTRATION_MIDDLEWARE}</CodeBlock>
+        <CodeBlock>{MULTI}</CodeBlock>
       </div>
     </Page>
   );

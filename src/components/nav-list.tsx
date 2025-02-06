@@ -14,16 +14,16 @@ export const NavList = () => {
           <Link href="/routing">Routing</Link>
         </li>
         <li>
-          <Link href="/request">Request</Link>
+          <Link href="/requests">Requests</Link>
         </li>
         <li>
-          <Link href="/response">Response</Link>
+          <Link href="/responses">Responses</Link>
         </li>
         <li>
           <Link href="/cookies">Cookies</Link>
         </li>
         <li>
-          <Link href="/header-utilities">Header utilities</Link>
+          <Link href="/headers">Headers</Link>
         </li>
         <li>
           <Link href="/prebuilt-middlewares">Prebuilt middlewares</Link>

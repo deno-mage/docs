@@ -33,7 +33,7 @@ const WILDCARD_PATHS = `/public/
 
 export const RoutingPage = () => {
   return (
-    <Page description="Learn about Mage routing" title="Routing">
+    <Page description="Learn about Mage" title="Routing">
       <div className="flex flex-col gap-4 max-w-full">
         <BreadcrumbList>
           <Breadcrumb href="/">Home</Breadcrumb>

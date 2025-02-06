@@ -5,7 +5,7 @@ import { Text } from "../components/text.tsx";
 
 export const PrebuiltMiddlewaresPage = () => {
   return (
-    <Page description="Learn about Mage context" title="Context">
+    <Page description="Learn about Mage" title="Prebuilt middlewares">
       <div className="flex flex-col gap-4 max-w-full">
         <BreadcrumbList>
           <Breadcrumb href="/">Home</Breadcrumb>
@@ -15,7 +15,7 @@ export const PrebuiltMiddlewaresPage = () => {
         </BreadcrumbList>
 
         <Heading level={1}>Prebuilt middlewares</Heading>
-        <Text as="p">
+        <Text as="p" size="lg">
           Mage provides a few prebuilt middlewares to help you set handle common
           scenarios.
         </Text>

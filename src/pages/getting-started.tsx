@@ -28,7 +28,7 @@ const RUN_COMMAND = "deno run --allow-all main.ts";
 
 export const GettingStartedPage = () => {
   return (
-    <Page description="Getting started with Mage" title="Getting Started">
+    <Page description="Getting started with Mage" title="Getting started">
       <div className="flex flex-col gap-4 max-w-full">
         <BreadcrumbList>
           <Breadcrumb href="/">Home</Breadcrumb>
@@ -38,6 +38,9 @@ export const GettingStartedPage = () => {
         </BreadcrumbList>
 
         <Heading level={1}>Getting started</Heading>
+        <Text as="p" size="lg">
+          Setup a simple Mage app using these steps.
+        </Text>
 
         <Heading level={2}>Install</Heading>
         <Text as="p">

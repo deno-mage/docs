@@ -4,10 +4,10 @@ import { resolve } from "jsr:@std/path";
 import { GettingStartedPage } from "./pages/getting-started.tsx";
 import { MiddlewarePage } from "./pages/middleware.tsx";
 import { RoutingPage } from "./pages/routing.tsx";
-import { ResponsePage } from "./pages/response.tsx";
-import { RequestPage } from "./pages/request.tsx";
+import { ResponsesPage } from "./pages/responses.tsx";
+import { RequestsPage } from "./pages/requests.tsx";
 import { CookiesPage } from "./pages/cookies.tsx";
-import { HeaderUtilitiesPage } from "./pages/header-utilities.tsx";
+import { HeadersPage } from "./pages/headers.tsx";
 import { PrebuiltMiddlewaresPage } from "./pages/prebuilt-middlewares.tsx";
 
 const isDeployed = Deno.env.has("DENO_DEPLOYMENT_ID");
@@ -31,17 +31,17 @@ app.get("/middleware", async (context) => {
 app.get("/routing", async (context) => {
   await context.render(StatusCode.OK, <RoutingPage />);
 });
-app.get("/request", async (context) => {
-  await context.render(StatusCode.OK, <RequestPage />);
+app.get("/requests", async (context) => {
+  await context.render(StatusCode.OK, <RequestsPage />);
 });
-app.get("/response", async (context) => {
-  await context.render(StatusCode.OK, <ResponsePage />);
+app.get("/responses", async (context) => {
+  await context.render(StatusCode.OK, <ResponsesPage />);
 });
 app.get("/cookies", async (context) => {
   await context.render(StatusCode.OK, <CookiesPage />);
 });
-app.get("/header-utilities", async (context) => {
-  await context.render(StatusCode.OK, <HeaderUtilitiesPage />);
+app.get("/headers", async (context) => {
+  await context.render(StatusCode.OK, <HeadersPage />);
 });
 app.get("/prebuilt-middlewares", async (context) => {
   await context.render(StatusCode.OK, <PrebuiltMiddlewaresPage />);
