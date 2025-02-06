@@ -1,4 +1,4 @@
-import { MageApp, StatusCode, useServeFiles } from "@mage/server";
+import { cacheControl, MageApp, StatusCode, useServeFiles } from "@mage/server";
 import { IndexPage } from "./pages/index.tsx";
 import { resolve } from "jsr:@std/path";
 import { GettingStartedPage } from "./pages/getting-started.tsx";
@@ -57,6 +57,10 @@ app.get("/serving-files", async (context) => {
 
 app.get(
   "/public/*",
+  async (context, next) => {
+    cacheControl(context, { maxAge: 60 * 60 * 24 * 7 });
+    await next();
+  },
   useServeFiles({ directory: resolve(Deno.cwd(), "./public") }),
 );
 
