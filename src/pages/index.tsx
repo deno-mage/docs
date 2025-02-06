@@ -9,8 +9,8 @@ const EXAMPLE_APP = `import { MageApp, StatusCode } from "@mage/server";
 
 const app = new MageApp();
 
-app.get("/", (context) => {
-  context.render(StatusCode.OK, <h1>Hello, World!</h1>);
+app.get("/", async (context) => {
+  await context.render(StatusCode.OK, <h1>Hello, World!</h1>);
 });
 
 Deno.serve(app.build());`;
@@ -24,7 +24,7 @@ export const IndexPage = () => {
             Home
           </Breadcrumb>
         </BreadcrumbList>
-        <Heading level="hero">Mage</Heading>
+        <Heading level="hero">Build with Mage</Heading>
         <Text size="lg" as="p">
           Build web applications with{" "}
           <Link
@@ -42,7 +42,7 @@ export const IndexPage = () => {
           >
             Preact
           </Link>{" "}
-          that feel familiar.
+          with an API that feels familiar.
         </Text>
         <CodeBlock>{EXAMPLE_APP}</CodeBlock>
       </div>

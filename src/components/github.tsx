@@ -1,6 +1,11 @@
 export const GitHub = () => {
   return (
-    <a href="https://github.com/deno-mage/server" title="GitHub">
+    <a
+      href="https://github.com/deno-mage/server"
+      title="GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <svg width="49" height="48" viewBox="0 0 98 96">
         <path
           fill-rule="evenodd"
