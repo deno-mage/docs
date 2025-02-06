@@ -42,11 +42,11 @@ export const HeaderUtilitiesPage = () => {
         <BreadcrumbList>
           <Breadcrumb href="/">Home</Breadcrumb>
           <Breadcrumb href="/header-utilities" isCurrent>
-            Header Utilities
+            Header utilities
           </Breadcrumb>
         </BreadcrumbList>
 
-        <Heading level={1}>Header Utilities</Heading>
+        <Heading level={1}>Header utilities</Heading>
         <Text as="p">
           Mage provides utility functions to help you configure some response
           headers.
