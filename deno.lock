@@ -1,7 +1,7 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@mage/server@0.9": "0.9.0",
+    "jsr:@mage/server@~0.10.1": "0.10.1",
     "jsr:@preact-icons/common@^1.0.12": "1.0.12",
     "jsr:@preact-icons/fa@^1.0.12": "1.0.12",
     "jsr:@std/cli@^1.0.8": "1.0.9",
@@ -17,15 +17,15 @@
     "jsr:@std/streams@^1.0.8": "1.0.8",
     "npm:@tailwindcss/cli@*": "4.0.3",
     "npm:@tailwindcss/cli@^4.0.3": "4.0.3",
-    "npm:preact-render-to-string@^6.5.11": "6.5.11_preact@10.25.0",
+    "npm:preact-render-to-string@^6.5.11": "6.5.13_preact@10.22.1",
     "npm:preact@10.22.1": "10.22.1",
     "npm:preact@^10.22.1": "10.25.0",
     "npm:preact@^10.25.0": "10.25.0",
     "npm:tailwindcss@^4.0.3": "4.0.3"
   },
   "jsr": {
-    "@mage/server@0.9.0": {
-      "integrity": "c9d8a201530d890c154f3a4648ba911c4d34b81056898f4d5f69816400bf1bfe",
+    "@mage/server@0.10.1": {
+      "integrity": "67fa43efe31f0bb1abc6e570aad3ce06db878dc63979d6aafee92543a51b2bb6",
       "dependencies": [
         "jsr:@std/fs",
         "jsr:@std/http",
@@ -329,10 +329,10 @@
     "picomatch@2.3.1": {
       "integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="
     },
-    "preact-render-to-string@6.5.11_preact@10.25.0": {
-      "integrity": "sha512-ubnauqoGczeGISiOh6RjX0/cdaF8v/oDXIjO85XALCQjwQP+SB4RDXXtvZ6yTYSjG+PC1QRP2AhPgCEsM2EvUw==",
+    "preact-render-to-string@6.5.13_preact@10.22.1": {
+      "integrity": "sha512-iGPd+hKPMFKsfpR2vL4kJ6ZPcFIoWZEcBf0Dpm3zOpdVvj77aY8RlLiQji5OMrngEyaxGogeakTb54uS2FvA6w==",
       "dependencies": [
-        "preact@10.25.0"
+        "preact@10.22.1"
       ]
     },
     "preact@10.22.1": {
@@ -356,7 +356,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@mage/server@0.9",
+      "jsr:@mage/server@~0.10.1",
       "jsr:@preact-icons/fa@^1.0.12",
       "jsr:@std/path@^1.0.8",
       "npm:@tailwindcss/cli@^4.0.3",
