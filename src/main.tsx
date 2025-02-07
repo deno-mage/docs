@@ -11,6 +11,7 @@ import { HeadersPage } from "./pages/headers.tsx";
 import { CorsPage } from "./pages/cors.tsx";
 import { SecurityHeadersPage } from "./pages/security-headers.tsx";
 import { ServingFilesPage } from "./pages/serving-files.tsx";
+import { TestingPage } from "./pages/testing.tsx";
 
 const isDeployed = Deno.env.has("DENO_DEPLOYMENT_ID");
 
@@ -53,6 +54,9 @@ app.get("/security-headers", async (context) => {
 });
 app.get("/serving-files", async (context) => {
   await context.render(StatusCode.OK, <ServingFilesPage />);
+});
+app.get("/testing", async (context) => {
+  await context.render(StatusCode.OK, <TestingPage />);
 });
 
 app.get(
