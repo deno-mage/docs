@@ -40,8 +40,8 @@ export class MageTestServer {
 const TEST_JSON_RESPONSE =
   `import { afterAll, beforeAll, describe, it } from "@std/testing/bdd";
 import { expect } from "@std/expect";
-import { StatusCode } from "../../mod.ts";
-import { MageTestServer } from "../../test-utils/server.ts";
+import { StatusCode } from "@mage/server";
+import { MageTestServer } from "./test-server.ts";
 
 let server: MageTestServer;
 
