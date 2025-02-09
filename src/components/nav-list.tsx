@@ -38,6 +38,9 @@ export const NavList = () => {
           <Link href="/validation">Validation</Link>
         </li>
         <li>
+          <Link href="/web-sockets">Web Sockets</Link>
+        </li>
+        <li>
           <Link href="/testing">Testing</Link>
         </li>
       </ul>

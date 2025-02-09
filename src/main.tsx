@@ -1,4 +1,11 @@
-import { cacheControl, MageApp, StatusCode, useServeFiles } from "@mage/server";
+import {
+  cacheControl,
+  contentSecurityPolicy,
+  MageApp,
+  StatusCode,
+  useSecurityHeaders,
+  useServeFiles,
+} from "@mage/server";
 import { IndexPage } from "./pages/index.tsx";
 import { resolve } from "jsr:@std/path";
 import { GettingStartedPage } from "./pages/getting-started.tsx";
@@ -13,14 +20,24 @@ import { SecurityHeadersPage } from "./pages/security-headers.tsx";
 import { ServingFilesPage } from "./pages/serving-files.tsx";
 import { TestingPage } from "./pages/testing.tsx";
 import { ValidationPage } from "./pages/validation.tsx";
-
-const isDeployed = Deno.env.has("DENO_DEPLOYMENT_ID");
+import { WebSocketsPage } from "./pages/web-sockets.tsx";
 
 const app = new MageApp();
 
-if (isDeployed) {
-  // todo - apply security headers when they are configurable
-}
+app.use(useSecurityHeaders(), async (context, next) => {
+  contentSecurityPolicy(context, {
+    directives: {
+      scriptSrc: [
+        "'self'",
+        "'unsafe-inline'",
+        "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js",
+      ],
+    },
+  });
+
+  await next();
+});
 
 app.get("/", async (context) => {
   await context.render(StatusCode.OK, <IndexPage />);
@@ -58,6 +75,9 @@ app.get("/serving-files", async (context) => {
 });
 app.get("/validation", async (context) => {
   await context.render(StatusCode.OK, <ValidationPage />);
+});
+app.get("/web-sockets", async (context) => {
+  await context.render(StatusCode.OK, <WebSocketsPage />);
 });
 app.get("/testing", async (context) => {
   await context.render(StatusCode.OK, <TestingPage />);
