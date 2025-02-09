@@ -1,44 +1,49 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@mage/server@~0.10.1": "0.10.1",
+    "jsr:@mage/server@0.11": "0.11.0",
     "jsr:@preact-icons/common@^1.0.12": "1.0.12",
     "jsr:@preact-icons/fa@^1.0.12": "1.0.12",
-    "jsr:@std/cli@^1.0.8": "1.0.9",
-    "jsr:@std/encoding@^1.0.5": "1.0.6",
-    "jsr:@std/fmt@^1.0.3": "1.0.3",
-    "jsr:@std/fs@^1.0.5": "1.0.8",
+    "jsr:@std/cache@~0.1.3": "0.1.3",
+    "jsr:@std/cli@^1.0.12": "1.0.12",
+    "jsr:@std/encoding@^1.0.7": "1.0.7",
+    "jsr:@std/fmt@^1.0.5": "1.0.5",
+    "jsr:@std/fs@^1.0.11": "1.0.11",
     "jsr:@std/html@^1.0.3": "1.0.3",
-    "jsr:@std/http@^1.0.10": "1.0.12",
+    "jsr:@std/http@^1.0.13": "1.0.13",
     "jsr:@std/media-types@^1.1.0": "1.1.0",
     "jsr:@std/net@^1.0.4": "1.0.4",
     "jsr:@std/path@*": "1.0.8",
     "jsr:@std/path@^1.0.8": "1.0.8",
-    "jsr:@std/streams@^1.0.8": "1.0.8",
+    "jsr:@std/streams@^1.0.9": "1.0.9",
     "npm:@tailwindcss/cli@*": "4.0.3",
     "npm:@tailwindcss/cli@^4.0.3": "4.0.3",
     "npm:preact-render-to-string@^6.5.11": "6.5.13_preact@10.22.1",
+    "npm:preact-render-to-string@^6.5.13": "6.5.13_preact@10.22.1",
     "npm:preact@10.22.1": "10.22.1",
     "npm:preact@^10.22.1": "10.25.0",
     "npm:preact@^10.25.0": "10.25.0",
+    "npm:preact@^10.25.4": "10.25.4",
     "npm:tailwindcss@^4.0.3": "4.0.3"
   },
   "jsr": {
-    "@mage/server@0.10.1": {
-      "integrity": "67fa43efe31f0bb1abc6e570aad3ce06db878dc63979d6aafee92543a51b2bb6",
+    "@mage/server@0.11.0": {
+      "integrity": "8ff94636d9225be95b2c2a229cec18ba35d67c040a47eb68548527c57f4cb3cc",
       "dependencies": [
+        "jsr:@std/cache",
         "jsr:@std/fs",
         "jsr:@std/http",
         "jsr:@std/path@^1.0.8",
-        "npm:preact-render-to-string",
-        "npm:preact@^10.25.0"
+        "npm:preact-render-to-string@^6.5.13",
+        "npm:preact@^10.25.4"
       ]
     },
     "@preact-icons/common@1.0.12": {
       "integrity": "f7d7329d55c2753b0162438b120b638e5058fa406f49fe6b422e3b0694f6e0c1",
       "dependencies": [
         "npm:preact@^10.22.1",
-        "npm:preact@^10.25.0"
+        "npm:preact@^10.25.0",
+        "npm:preact@^10.25.4"
       ]
     },
     "@preact-icons/fa@1.0.12": {
@@ -48,17 +53,20 @@
         "npm:preact@10.22.1"
       ]
     },
-    "@std/cli@1.0.9": {
-      "integrity": "557e5865af000efbf3f737dcfea5b8ab86453594f4a9cd8d08c9fa83d8e3f3bc"
+    "@std/cache@0.1.3": {
+      "integrity": "8d3ab61d994d0915295048999f34a8ce2280f0e4d1f4cccb08c9e3d297c0c6ec"
     },
-    "@std/encoding@1.0.6": {
-      "integrity": "ca87122c196e8831737d9547acf001766618e78cd8c33920776c7f5885546069"
+    "@std/cli@1.0.12": {
+      "integrity": "e5cfb7814d189da174ecd7a34fbbd63f3513e24a1b307feb2fcd5da47a070d90"
     },
-    "@std/fmt@1.0.3": {
-      "integrity": "97765c16aa32245ff4e2204ecf7d8562496a3cb8592340a80e7e554e0bb9149f"
+    "@std/encoding@1.0.7": {
+      "integrity": "f631247c1698fef289f2de9e2a33d571e46133b38d042905e3eac3715030a82d"
     },
-    "@std/fs@1.0.8": {
-      "integrity": "161c721b6f9400b8100a851b6f4061431c538b204bb76c501d02c508995cffe0",
+    "@std/fmt@1.0.5": {
+      "integrity": "0cfab43364bc36650d83c425cd6d99910fc20c4576631149f0f987eddede1a4d"
+    },
+    "@std/fs@1.0.11": {
+      "integrity": "ba674672693340c5ebdd018b4fe1af46cb08741f42b4c538154e97d217b55bdd",
       "dependencies": [
         "jsr:@std/path@^1.0.8"
       ]
@@ -66,8 +74,8 @@
     "@std/html@1.0.3": {
       "integrity": "7a0ac35e050431fb49d44e61c8b8aac1ebd55937e0dc9ec6409aa4bab39a7988"
     },
-    "@std/http@1.0.12": {
-      "integrity": "85246d8bfe9c8e2538518725b158bdc31f616e0869255f4a8d9e3de919cab2aa",
+    "@std/http@1.0.13": {
+      "integrity": "d29618b982f7ae44380111f7e5b43da59b15db64101198bb5f77100d44eb1e1e",
       "dependencies": [
         "jsr:@std/cli",
         "jsr:@std/encoding",
@@ -88,8 +96,8 @@
     "@std/path@1.0.8": {
       "integrity": "548fa456bb6a04d3c1a1e7477986b6cffbce95102d0bb447c67c4ee70e0364be"
     },
-    "@std/streams@1.0.8": {
-      "integrity": "b41332d93d2cf6a82fe4ac2153b930adf1a859392931e2a19d9fabfb6f154fb3"
+    "@std/streams@1.0.9": {
+      "integrity": "a9d26b1988cdd7aa7b1f4b51e1c36c1557f3f252880fa6cc5b9f37078b1a5035"
     }
   },
   "npm": {
@@ -341,6 +349,9 @@
     "preact@10.25.0": {
       "integrity": "sha512-6bYnzlLxXV3OSpUxLdaxBmE7PMOu0aR3pG6lryK/0jmvcDFPlcXGQAt5DpK3RITWiDrfYZRI0druyaK/S9kYLg=="
     },
+    "preact@10.25.4": {
+      "integrity": "sha512-jLdZDb+Q+odkHJ+MpW/9U5cODzqnB+fy2EiHSZES7ldV5LK7yjlVzTp7R8Xy6W6y75kfK8iWYtFVH7lvjwrCMA=="
+    },
     "tailwindcss@4.0.3": {
       "integrity": "sha512-ImmZF0Lon5RrQpsEAKGxRvHwCvMgSC4XVlFRqmbzTEDb/3wvin9zfEZrMwgsa3yqBbPqahYcVI6lulM2S7IZAA=="
     },
@@ -356,11 +367,11 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@mage/server@~0.10.1",
+      "jsr:@mage/server@0.11",
       "jsr:@preact-icons/fa@^1.0.12",
       "jsr:@std/path@^1.0.8",
       "npm:@tailwindcss/cli@^4.0.3",
-      "npm:preact@^10.25.0",
+      "npm:preact@^10.25.4",
       "npm:tailwindcss@^4.0.3"
     ]
   }
