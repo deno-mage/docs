@@ -1,7 +1,7 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@mage/server@0.12": "0.12.0",
+    "jsr:@mage/server@0.13": "0.13.0",
     "jsr:@preact-icons/common@^1.0.12": "1.0.12",
     "jsr:@preact-icons/fa@^1.0.12": "1.0.12",
     "jsr:@standard-schema/spec@1": "1.0.0",
@@ -27,8 +27,8 @@
     "npm:tailwindcss@^4.0.3": "4.0.3"
   },
   "jsr": {
-    "@mage/server@0.12.0": {
-      "integrity": "e70a74e9df309bb1d0d507048bb810146d004ca22fc00ae5a19df98f13e58d48",
+    "@mage/server@0.13.0": {
+      "integrity": "f0930cf41023f122560aaa7b2b0d553fec3b86edc5b9fbdead8c9963a86798b0",
       "dependencies": [
         "jsr:@standard-schema/spec",
         "jsr:@std/cache",
@@ -371,7 +371,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@mage/server@0.12",
+      "jsr:@mage/server@0.13",
       "jsr:@preact-icons/fa@^1.0.12",
       "jsr:@std/path@^1.0.8",
       "npm:@tailwindcss/cli@^4.0.3",
