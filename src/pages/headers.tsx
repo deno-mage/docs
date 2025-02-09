@@ -4,11 +4,11 @@ import { CodeBlock } from "../components/code-block.tsx";
 import { Breadcrumb, BreadcrumbList } from "../components/breadcrumbs.tsx";
 import { Text } from "../components/text.tsx";
 
-const READ_REQUEST_HEADERS = `app.get("/", (context) => {
+const READ_REQUEST_HEADERS = `app.use((context) => {
   console.log(context.request.headers.get("User-Agent"));
 });`;
 
-const EDIT_HEADERS = `app.get("/", (context) => {
+const EDIT_HEADERS = `app.use((context) => {
   context.response.headers.set("Content-Type", "text/plain");
   context.response.headers.delete("Content-Type", "text/plain");
 });`;
@@ -17,8 +17,6 @@ const CACHE_CONTROL = `app.use((context) => {
   cacheControl(context, {
     maxAge: 60,
   });
-
-  context.text(StatusCode.OK, "Hello, World!");
 });`;
 
 const CSP = `app.use((context) => {
@@ -28,8 +26,6 @@ const CSP = `app.use((context) => {
       scriptSrc: ["'self'", "https://example.com"],
     },
   });
-
-  context.text(StatusCode.OK, "Hello, World!");
 });`;
 
 export const HeadersPage = () => {
