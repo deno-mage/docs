@@ -35,6 +35,9 @@ export const NavList = () => {
           <Link href="/serving-files">Serving files</Link>
         </li>
         <li>
+          <Link href="/validation">Validation</Link>
+        </li>
+        <li>
           <Link href="/testing">Testing</Link>
         </li>
       </ul>
