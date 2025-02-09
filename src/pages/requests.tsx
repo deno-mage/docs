@@ -43,9 +43,11 @@ export const RequestsPage = () => {
         <Text as="p">
           The request object is available on the context as a{" "}
           <Text as="code">MageRequest</Text>{" "}
-          that provides memoized access to the body utility methods like{" "}
-          <Text as="code">text()</Text>, <Text as="code">json()</Text>, and{" "}
-          <Text as="code">formData()</Text>.
+          which wraps the raw request. It provides memoized access to the body
+          utility methods like <Text as="code">text()</Text>,{" "}
+          <Text as="code">json()</Text>, and <Text as="code">formData()</Text>
+          {" "}
+          so they can be called multiple times.
         </Text>
         <CodeBlock>{REQUEST}</CodeBlock>
 
