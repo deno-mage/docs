@@ -78,6 +78,12 @@ export const HeadersPage = () => {
           function helps you set the Content-Security-Policy header.
         </Text>
         <CodeBlock>{CSP}</CodeBlock>
+
+        <Heading level={2}>Security headers</Heading>
+        <Text as="p" size="lg">
+          You can configure common security headers via a middleware provided by
+          Mage.
+        </Text>
       </div>
     </Page>
   );

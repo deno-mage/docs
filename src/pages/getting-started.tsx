@@ -5,7 +5,7 @@ import { Breadcrumb, BreadcrumbList } from "../components/breadcrumbs.tsx";
 import { Link } from "../components/link.tsx";
 import { Text } from "../components/text.tsx";
 
-const INSTALL_COMMAND = "deno add jsr:@mage/server npm:preact";
+const INSTALL_COMMAND = "deno add jsr:@mage/server npm:preact@10.22.1";
 
 const MINIMAL_TSCONFIG = `{
   "compilerOptions": {
