@@ -1,5 +1,4 @@
 import {
-  cacheControl,
   contentSecurityPolicy,
   MageApp,
   StatusCode,
@@ -21,6 +20,7 @@ import { ServingFilesPage } from "./pages/serving-files.tsx";
 import { TestingPage } from "./pages/testing.tsx";
 import { ValidationPage } from "./pages/validation.tsx";
 import { WebSocketsPage } from "./pages/web-sockets.tsx";
+import { PageProvider } from "./components/page-context.tsx";
 
 const app = new MageApp();
 
@@ -40,55 +40,120 @@ app.use(useSecurityHeaders(), async (context, next) => {
 });
 
 app.get("/", async (context) => {
-  await context.render(StatusCode.OK, <IndexPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <IndexPage />
+    </PageProvider>,
+  );
 });
-
 app.get("/getting-started", async (context) => {
-  await context.render(StatusCode.OK, <GettingStartedPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <GettingStartedPage />
+    </PageProvider>,
+  );
 });
 app.get("/middleware", async (context) => {
-  await context.render(StatusCode.OK, <MiddlewarePage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <MiddlewarePage />
+    </PageProvider>,
+  );
 });
 app.get("/routing", async (context) => {
-  await context.render(StatusCode.OK, <RoutingPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <RoutingPage />
+    </PageProvider>,
+  );
 });
 app.get("/requests", async (context) => {
-  await context.render(StatusCode.OK, <RequestsPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <RequestsPage />
+    </PageProvider>,
+  );
 });
 app.get("/responses", async (context) => {
-  await context.render(StatusCode.OK, <ResponsesPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <ResponsesPage />
+    </PageProvider>,
+  );
 });
 app.get("/cookies", async (context) => {
-  await context.render(StatusCode.OK, <CookiesPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <CookiesPage />
+    </PageProvider>,
+  );
 });
 app.get("/headers", async (context) => {
-  await context.render(StatusCode.OK, <HeadersPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <HeadersPage />
+    </PageProvider>,
+  );
 });
 app.get("/cors", async (context) => {
-  await context.render(StatusCode.OK, <CorsPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <CorsPage />
+    </PageProvider>,
+  );
 });
 app.get("/security-headers", async (context) => {
-  await context.render(StatusCode.OK, <SecurityHeadersPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <SecurityHeadersPage />
+    </PageProvider>,
+  );
 });
 app.get("/serving-files", async (context) => {
-  await context.render(StatusCode.OK, <ServingFilesPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <ServingFilesPage />
+    </PageProvider>,
+  );
 });
 app.get("/validation", async (context) => {
-  await context.render(StatusCode.OK, <ValidationPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <ValidationPage />
+    </PageProvider>,
+  );
 });
 app.get("/web-sockets", async (context) => {
-  await context.render(StatusCode.OK, <WebSocketsPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <WebSocketsPage />
+    </PageProvider>,
+  );
 });
 app.get("/testing", async (context) => {
-  await context.render(StatusCode.OK, <TestingPage />);
+  await context.render(
+    StatusCode.OK,
+    <PageProvider context={context}>
+      <TestingPage />
+    </PageProvider>,
+  );
 });
 
 app.get(
   "/public/*",
-  async (context, next) => {
-    cacheControl(context, { maxAge: 60 * 60 * 24 * 7 });
-    await next();
-  },
   useServeFiles({ directory: resolve(Deno.cwd(), "./public") }),
 );
 

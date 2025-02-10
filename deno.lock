@@ -1,7 +1,7 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@mage/server@0.13": "0.13.0",
+    "jsr:@mage/server@~0.14.1": "0.14.1",
     "jsr:@preact-icons/common@^1.0.12": "1.0.12",
     "jsr:@preact-icons/fa@^1.0.12": "1.0.12",
     "jsr:@standard-schema/spec@1": "1.0.0",
@@ -17,18 +17,17 @@
     "jsr:@std/path@*": "1.0.8",
     "jsr:@std/path@^1.0.8": "1.0.8",
     "jsr:@std/streams@^1.0.9": "1.0.9",
-    "npm:@tailwindcss/cli@*": "4.0.3",
     "npm:@tailwindcss/cli@^4.0.3": "4.0.3",
     "npm:preact-render-to-string@^6.5.13": "6.5.13_preact@10.22.1",
     "npm:preact@10.22.1": "10.22.1",
-    "npm:preact@^10.22.1": "10.25.0",
-    "npm:preact@^10.25.0": "10.25.0",
+    "npm:preact@10.25.4": "10.25.4",
+    "npm:preact@^10.22.1": "10.22.1",
     "npm:preact@^10.25.4": "10.25.4",
     "npm:tailwindcss@^4.0.3": "4.0.3"
   },
   "jsr": {
-    "@mage/server@0.13.0": {
-      "integrity": "f0930cf41023f122560aaa7b2b0d553fec3b86edc5b9fbdead8c9963a86798b0",
+    "@mage/server@0.14.1": {
+      "integrity": "bf5008f79f590e1466d7a183d2ffe101be5de969613fdccaa1a63d233dfd088b",
       "dependencies": [
         "jsr:@standard-schema/spec",
         "jsr:@std/cache",
@@ -42,9 +41,9 @@
     "@preact-icons/common@1.0.12": {
       "integrity": "f7d7329d55c2753b0162438b120b638e5058fa406f49fe6b422e3b0694f6e0c1",
       "dependencies": [
-        "npm:preact@^10.22.1",
-        "npm:preact@^10.25.0",
-        "npm:preact@^10.25.4"
+        "npm:preact@10.22.1",
+        "npm:preact@10.25.4",
+        "npm:preact@^10.22.1"
       ]
     },
     "@preact-icons/fa@1.0.12": {
@@ -350,9 +349,6 @@
     "preact@10.22.1": {
       "integrity": "sha512-jRYbDDgMpIb5LHq3hkI0bbl+l/TQ9UnkdQ0ww+lp+4MMOdqaUYdFc5qeyP+IV8FAd/2Em7drVPeKdQxsiWCf/A=="
     },
-    "preact@10.25.0": {
-      "integrity": "sha512-6bYnzlLxXV3OSpUxLdaxBmE7PMOu0aR3pG6lryK/0jmvcDFPlcXGQAt5DpK3RITWiDrfYZRI0druyaK/S9kYLg=="
-    },
     "preact@10.25.4": {
       "integrity": "sha512-jLdZDb+Q+odkHJ+MpW/9U5cODzqnB+fy2EiHSZES7ldV5LK7yjlVzTp7R8Xy6W6y75kfK8iWYtFVH7lvjwrCMA=="
     },
@@ -371,11 +367,12 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@mage/server@0.13",
+      "jsr:@mage/server@~0.14.1",
       "jsr:@preact-icons/fa@^1.0.12",
       "jsr:@std/path@^1.0.8",
       "npm:@tailwindcss/cli@^4.0.3",
-      "npm:preact@^10.25.4",
+      "npm:preact-render-to-string@^6.5.13",
+      "npm:preact@10.22.1",
       "npm:tailwindcss@^4.0.3"
     ]
   }
