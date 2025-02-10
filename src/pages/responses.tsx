@@ -31,22 +31,6 @@ const RENDER = `app.get("/", (context) => {
   );
 });`;
 
-const RENDER_WITH_ASSETS = `app.get("/", (context) => {
-  await context.render(
-    StatusCode.OK,
-    <html lang="en">
-      ...
-        <img src={context.asset("/public/image.png")} />
-      ...
-    </html>,
-  );
-});
-
-app.get(
-  "/public/*",
-  useServeFiles({ directory: resolve(Deno.cwd(), "./public") })
-);`;
-
 const EMPTY = `app.get("/", (context) => {
   context.empty(StatusCode.NoContent);
 });`;
@@ -123,15 +107,6 @@ export const ResponsesPage = () => {
           via <Text as="code">context.render()</Text>.
         </Text>
         <CodeBlock>{RENDER}</CodeBlock>
-
-        <Heading level={3}>Assets with cache busting</Heading>
-        <Text as="p">
-          Serve assets with cache busting via{" "}
-          <Text as="code">context.asset()</Text> and{" "}
-          <Text as="code">useServeFiles()</Text>. This will append the build id
-          to the asset URL and apply a long cache header.
-        </Text>
-        <CodeBlock>{RENDER_WITH_ASSETS}</CodeBlock>
 
         <Heading level={3}>Empty</Heading>
         <Text as="p">
