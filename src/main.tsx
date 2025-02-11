@@ -22,6 +22,8 @@ import { ValidationPage } from "./pages/validation.tsx";
 import { WebSocketsPage } from "./pages/web-sockets.tsx";
 import { PageProvider } from "./components/page-context.tsx";
 
+const isProd = Boolean(Deno.env.get("DENO_DEPLOYMENT_ID"));
+
 const app = new MageApp();
 
 app.use(useSecurityHeaders(), async (context, next) => {
@@ -33,6 +35,7 @@ app.use(useSecurityHeaders(), async (context, next) => {
         "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js",
         "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js",
       ],
+      upgradeInsecureRequests: isProd,
     },
   });
 
