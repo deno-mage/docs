@@ -5,24 +5,17 @@ import { Breadcrumb, BreadcrumbList } from "../components/breadcrumbs.tsx";
 import { Link } from "../components/link.tsx";
 import { Text } from "../components/text.tsx";
 
-const INSTALL_COMMAND = "deno add jsr:@mage/server npm:preact";
+const INSTALL_COMMAND = "deno add jsr:@mage/app";
 
-const MINIMAL_TSCONFIG = `{
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact"
-  }
-}`;
-
-const FIRST_APP_CODE = `import { MageApp, StatusCode } from "@mage/server";
+const FIRST_APP_CODE = `import { MageApp } from "@mage/app";
 
 const app = new MageApp();
 
-app.get("/", async (context) => {
-  await context.render(StatusCode.OK, <h1>Hello, World!</h1>);
+app.get("/", async (c) => {
+  c.text("Hello, world!");
 });
 
-Deno.serve(app.build());`;
+Deno.serve(app.handler);`;
 
 const RUN_COMMAND = "deno run --allow-all main.ts";
 
@@ -55,13 +48,6 @@ export const GettingStartedPage = () => {
           .
         </Text>
         <CodeBlock>{INSTALL_COMMAND}</CodeBlock>
-
-        <Heading level={2}>Minimal compiler options</Heading>
-        <Text as="p">
-          Setup your minimal compiler options in{" "}
-          <Text as="code">deno.json</Text>.
-        </Text>
-        <CodeBlock>{MINIMAL_TSCONFIG}</CodeBlock>
 
         <Heading level={2}>Write your first app</Heading>
         <Text as="p">

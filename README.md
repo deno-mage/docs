@@ -3,7 +3,7 @@
   <h1 align="center">Mage Docs</h1>
 </p>
 <div align="center">
-  Documentation for <a href="https://jsr.io/@mage/server">@mage/server</a>
+  Documentation for Mage apps
 </div>
 
 ## Overview

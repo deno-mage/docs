@@ -7,10 +7,13 @@
     "check": "deno check ."
   },
   "imports": {
-    "@mage/server": "jsr:@mage/server@^0.14.3",
+    "@mage/app": "jsr:@mage/app@^0.2.3",
+    "@mage/preact": "jsr:@mage/preact@^0.1.0",
     "@preact-icons/fa": "jsr:@preact-icons/fa@^1.0.12",
     "@std/path": "jsr:@std/path@^1.0.8",
     "@tailwindcss/cli": "npm:@tailwindcss/cli@^4.0.3",
+    "@tailwindcss/postcss": "npm:@tailwindcss/postcss@^4.0.6",
+    "postcss": "npm:postcss@^8.5.2",
     "preact": "npm:preact@10.22.1",
     "tailwindcss": "npm:tailwindcss@^4.0.3"
   },

@@ -2,7 +2,7 @@ import type { ComponentChildren } from "preact";
 import { GitHub } from "./github.tsx";
 import { NavList } from "./nav-list.tsx";
 import { Heading } from "./heading.tsx";
-import { usePage } from "./page-context.tsx";
+import { useAsset } from "../utils.tsx";
 
 interface PageProps {
   children: ComponentChildren;
@@ -11,7 +11,7 @@ interface PageProps {
 }
 
 export const Page = (props: PageProps) => {
-  const { asset } = usePage();
+  const asset = useAsset();
 
   return (
     <html lang="en">

@@ -5,15 +5,15 @@ import { Link } from "../components/link.tsx";
 import { Breadcrumb, BreadcrumbList } from "../components/breadcrumbs.tsx";
 import { Text } from "../components/text.tsx";
 
-const EXAMPLE_APP = `import { MageApp, StatusCode } from "@mage/server";
+const EXAMPLE_APP = `import { MageApp } from "@mage/app";
 
 const app = new MageApp();
 
-app.get("/", async (context) => {
-  await context.render(StatusCode.OK, <h1>Hello, World!</h1>);
+app.get("/", async (c) => {
+  c.text("Hello, world!");
 });
 
-Deno.serve(app.build());`;
+Deno.serve(app.handler);`;
 
 export const IndexPage = () => {
   return (
@@ -33,16 +33,8 @@ export const IndexPage = () => {
             rel="noopener noreferrer"
           >
             Deno
-          </Link>
-          {" and "}
-          <Link
-            href="https://preactjs.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Preact
           </Link>{" "}
-          with an API that feels familiar.
+          that feels familiar.
         </Text>
         <CodeBlock>{EXAMPLE_APP}</CodeBlock>
       </div>
