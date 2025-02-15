@@ -5,23 +5,13 @@ import { useServeFiles } from "@mage/app/serve-files";
 import { render } from "@mage/preact";
 import { JSX } from "preact";
 import { resolve } from "jsr:@std/path";
-import tailwindcss from "@tailwindcss/postcss";
 import { AssetProvider } from "./utils.tsx";
 import { IndexPage } from "./pages/index.tsx";
 import { GettingStartedPage } from "./pages/getting-started.tsx";
-import { usePostCSS } from "./utils.tsx";
 
 const isDeployed = Boolean(Deno.env.get("DENO_DEPLOYMENT_ID"));
 
 export const app = new MageApp();
-
-app.use(
-  usePostCSS({
-    entry: "./src/main.css",
-    plugins: [tailwindcss()],
-    output: "./public/main.css",
-  }),
-);
 
 app.use(
   useSecurityHeaders(),
