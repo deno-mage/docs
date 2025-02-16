@@ -36,7 +36,7 @@ export const Page = (props: PageProps) => {
         {/* Highlight.js - end */}
       </head>
       <body className="subpixel-antialiased bg-white text-slate-800">
-        <div className="max-w-screen-lg mx-auto px-4">
+        <div className="flex flex-col max-w-screen-lg mx-auto px-4 min-h-screen">
           <header className="flex gap-4 justify-between items-center p-4 border-b-1 border-slate-800">
             <div className="text-6xl" aria-hidden>
               🧙‍♂️
@@ -51,14 +51,20 @@ export const Page = (props: PageProps) => {
             </div>
           </header>
 
-          <div className="flex flex-col lg:flex-row gap-8 py-4 max-w-full">
-            <aside>
-              <NavList />
-            </aside>
-            <main className="flex gap-4 flex-grow max-w-full">
-              {props.children}
-            </main>
+          <div className="grow">
+            <div className="flex flex-col lg:flex-row gap-8 pt-4 pb-12 max-w-full">
+              <aside>
+                <NavList />
+              </aside>
+              <main className="flex gap-4 flex-grow max-w-full">
+                {props.children}
+              </main>
+            </div>
           </div>
+
+          <footer className="px-4 py-8 border-t-1 border-slate-800 text-center">
+            Copyright © {new Date().getFullYear()} Mage authors
+          </footer>
         </div>
         {/* Highlight.js */}
         <script>hljs.highlightAll();</script>
