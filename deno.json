@@ -1,21 +1,20 @@
 {
   "tasks": {
-    "dev": "deno run --allow-all --watch ./src/main.tsx",
-    "css": "deno run --allow-all npm:@tailwindcss/cli -i ./src/main.css -o ./public/main.css --minify",
+    "build": "deno run -A ./src/build.ts",
+    "dev": "deno run -A --watch ./src/develop.ts",
     "lint": "deno lint",
     "format": "deno fmt",
     "check": "deno check ."
   },
   "imports": {
-    "@mage/app": "jsr:@mage/app@^0.4.0",
-    "@mage/preact": "jsr:@mage/preact@^0.1.4",
+    "@heroicons/react": "npm:@heroicons/react@^2.2.0",
+    "@mage/app": "jsr:@mage/app@^0.6.3",
+    "@mage/preact": "jsr:@mage/preact@^0.1.5",
+    "@mage/tailwindcss": "jsr:@mage/tailwindcss@^0.2.2",
     "@preact-icons/fa": "jsr:@preact-icons/fa@^1.0.12",
-    "@std/path": "jsr:@std/path@^1.0.8",
-    "@tailwindcss/cli": "npm:@tailwindcss/cli@^4.0.3",
-    "@tailwindcss/postcss": "npm:@tailwindcss/postcss@^4.0.6",
-    "postcss": "npm:postcss@^8.5.2",
-    "preact": "npm:preact@^10.26.0",
-    "tailwindcss": "npm:tailwindcss@^4.0.3"
+    "@preact/signals": "npm:@preact/signals@^2.0.1",
+    "preact": "npm:preact@^10.26.2",
+    "tailwindcss": "npm:tailwindcss@^4.0.8"
   },
   "compilerOptions": {
     "jsx": "react-jsx",

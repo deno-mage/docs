@@ -2,7 +2,7 @@ import type { ComponentChildren } from "preact";
 import { GitHub } from "./github.tsx";
 import { NavList } from "./nav-list.tsx";
 import { Heading } from "./heading.tsx";
-import { useAsset } from "../utils.tsx";
+import { assetURL } from "../assets.ts";
 
 interface PageProps {
   children: ComponentChildren;
@@ -11,8 +11,6 @@ interface PageProps {
 }
 
 export const Page = (props: PageProps) => {
-  const asset = useAsset();
-
   return (
     <html lang="en">
       <head>
@@ -20,12 +18,12 @@ export const Page = (props: PageProps) => {
         <link
           rel="icon"
           type="image/x-icon"
-          href={asset("/public/favicon.ico")}
+          href={assetURL("/public/favicon.ico")}
         />
         <title>Mage {props.title && `| ${props.title}`}</title>
         <meta name="description" content={props.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href={asset("/public/main.css")} />
+        <link rel="stylesheet" href={assetURL("/public/main.css")} />
         {/* Highlight.js */}
         <link
           rel="stylesheet"

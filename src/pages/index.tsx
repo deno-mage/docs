@@ -17,7 +17,7 @@ Deno.serve(app.handler);`;
 
 export const IndexPage = () => {
   return (
-    <Page description="Build web applications with Deno and Preact">
+    <Page description="Build web applications with Deno">
       <div className="flex flex-col gap-4 max-w-full">
         <BreadcrumbList>
           <Breadcrumb href="/" isCurrent>
