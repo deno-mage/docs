@@ -31,16 +31,6 @@ The repository contains a Mage Server application.
 When making changes to the server in the [src](./src) directory, it is
 recommended to run the server locally to test the changes.
 
-The styles are powered by [tailwindcss](https://tailwindcss.com/) and are build
-using the tailwind CLI. To build the styles run the following command:
-
-```sh
-deno task css
-
-# or in watch mode:
-deno task css --watch
-```
-
 Run the server with the following command:
 
 ```sh

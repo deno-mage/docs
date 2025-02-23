@@ -41,11 +41,11 @@ jobs:
         run: deno task check
 
       - name: Build
-        run: deno task css
+        run: deno task build
 
       - name: Deploy
         uses: denoland/deployctl@v1
         with:
           project: "mage-docs"
-          entrypoint: "./src/main.tsx"
+          entrypoint: "./src/serve.ts"
           root: "."

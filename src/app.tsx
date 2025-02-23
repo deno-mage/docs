@@ -1,11 +1,9 @@
 import { MageApp } from "@mage/app";
-import { useSecurityHeaders } from "@mage/app/security-headers";
-import { useCSP } from "@mage/app/csp";
-import { useServeFiles } from "@mage/app/serve-files";
+import { securityHeaders } from "@mage/app/security-headers";
+import { csp } from "@mage/app/csp";
+import { serveFiles } from "@mage/app/serve-files";
 import { render } from "@mage/preact";
 import { JSX } from "preact";
-import { resolve } from "jsr:@std/path";
-import { AssetProvider } from "./utils.tsx";
 import { IndexPage } from "./pages/index.tsx";
 import { GettingStartedPage } from "./pages/getting-started.tsx";
 import { BasicsPage } from "./pages/basics.tsx";
@@ -19,14 +17,24 @@ import { ServingFilesPage } from "./pages/serving-files.tsx";
 import { CORSPage } from "./pages/cors.tsx";
 import { CSPPage } from "./pages/csp.tsx";
 import { CacheControlPage } from "./pages/cache-control.tsx";
+import { tailwindcss } from "@mage/tailwindcss";
 
-const isDeployed = Boolean(Deno.env.get("DENO_DEPLOYMENT_ID"));
+const isDeployed = Boolean(Deno.env.has("DENO_DEPLOYMENT_ID"));
 
-export const app = new MageApp();
+export const app = new MageApp({
+  buildId: Deno.env.get("DENO_DEPLOYMENT_ID"),
+});
+
+app.plugin(
+  tailwindcss({
+    entry: "./src/main.css",
+    output: "./public/main.css",
+  }),
+);
 
 app.use(
-  useSecurityHeaders(),
-  useCSP({
+  securityHeaders(),
+  csp({
     directives: {
       scriptSrc: [
         "'self'",
@@ -38,6 +46,10 @@ app.use(
     },
   }),
 );
+
+app.get("/", async (c) => {
+  await render(c, <IndexPage />);
+});
 
 const pages: [string, JSX.Element][] = [
   ["/", <IndexPage />],
@@ -57,13 +69,13 @@ const pages: [string, JSX.Element][] = [
 
 for (const [path, page] of pages) {
   app.get(path, async (c) => {
-    await render(c, <AssetProvider buildId={c.buildId}>{page}</AssetProvider>);
+    await render(c, page);
   });
 }
 
 app.get(
   "/public/*",
-  useServeFiles({ directory: resolve(Deno.cwd(), "./public") }),
+  serveFiles({
+    directory: "./public",
+  }),
 );
-
-Deno.serve(app.handler);
