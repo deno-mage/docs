@@ -18,14 +18,11 @@ import { CORSPage } from "./pages/cors.tsx";
 import { CSPPage } from "./pages/csp.tsx";
 import { CacheControlPage } from "./pages/cache-control.tsx";
 import { tailwindcss } from "@mage/tailwindcss";
-import { setupAssetSignal } from "./assets.ts";
 
-const isDeployed = Boolean(Deno.env.get("DENO_DEPLOYMENT_ID"));
+const isDeployed = Boolean(Deno.env.has("DENO_DEPLOYMENT_ID"));
 
-export const app = new MageApp();
-
-setupAssetSignal({
-  buildId: app.buildId,
+export const app = new MageApp({
+  buildId: Deno.env.get("DENO_DEPLOYMENT_ID"),
 });
 
 app.plugin(

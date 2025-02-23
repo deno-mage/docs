@@ -2,7 +2,7 @@ import type { ComponentChildren } from "preact";
 import { GitHub } from "./github.tsx";
 import { NavList } from "./nav-list.tsx";
 import { Heading } from "./heading.tsx";
-import { assetURL } from "../assets.ts";
+import { assetURL } from "@mage/preact";
 
 interface PageProps {
   children: ComponentChildren;

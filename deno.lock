@@ -2,12 +2,11 @@
   "version": "4",
   "specifiers": {
     "jsr:@mage/app@~0.6.1": "0.6.3",
-    "jsr:@mage/app@~0.6.3": "0.6.3",
-    "jsr:@mage/preact@~0.1.5": "0.1.5",
-    "jsr:@mage/tailwindcss@~0.2.2": "0.2.2",
+    "jsr:@mage/app@~0.7.1": "0.7.1",
+    "jsr:@mage/preact@0.2": "0.2.0",
+    "jsr:@mage/tailwindcss@~0.2.4": "0.2.4",
     "jsr:@preact-icons/common@^1.0.12": "1.0.12",
     "jsr:@preact-icons/fa@^1.0.12": "1.0.12",
-    "jsr:@standard-schema/spec@1": "1.0.0",
     "jsr:@std/cache@~0.1.3": "0.1.3",
     "jsr:@std/cli@^1.0.12": "1.0.13",
     "jsr:@std/encoding@^1.0.7": "1.0.7",
@@ -22,7 +21,7 @@
     "npm:@heroicons/react@^2.2.0": "2.2.0_react@18.3.1",
     "npm:@preact/signals@^2.0.1": "2.0.1_preact@10.26.2",
     "npm:@tailwindcss/cli@*": "4.0.8",
-    "npm:preact-render-to-string@^6.5.13": "6.5.13_preact@10.26.2",
+    "npm:preact-render-to-string@^6.5.13": "6.5.13_preact@10.22.1",
     "npm:preact@10.22.1": "10.22.1",
     "npm:preact@^10.22.1": "10.26.2",
     "npm:preact@^10.25.4": "10.26.2",
@@ -33,25 +32,32 @@
     "@mage/app@0.6.3": {
       "integrity": "55d1bf54795a1cec555d8a028df6e7d1e4ed3664cafbba2ac9298178d836a51d",
       "dependencies": [
-        "jsr:@standard-schema/spec",
+        "jsr:@std/cache",
+        "jsr:@std/http"
+      ]
+    },
+    "@mage/app@0.7.1": {
+      "integrity": "9dd58b2d762a1f8c485da7aef2ddb3cf622578b5de84f1dbf19b4c04d30fdb2b",
+      "dependencies": [
         "jsr:@std/cache",
         "jsr:@std/fs",
         "jsr:@std/http",
         "jsr:@std/path"
       ]
     },
-    "@mage/preact@0.1.5": {
-      "integrity": "a4c35baf1bfdb693ccd5cd5837f33e3715aaaa0ab36eb1d39d82811c0ff30879",
+    "@mage/preact@0.2.0": {
+      "integrity": "608e52edd0c50597219094f340eddd763eaec185c59a0ba1b6904561db806837",
       "dependencies": [
         "jsr:@mage/app@~0.6.1",
+        "npm:@preact/signals",
         "npm:preact-render-to-string",
         "npm:preact@^10.25.4"
       ]
     },
-    "@mage/tailwindcss@0.2.2": {
-      "integrity": "081cc58befceb7ed4172f622b8a40e09a6095a225e54e2ef7c4fc9e4b9b733b1",
+    "@mage/tailwindcss@0.2.4": {
+      "integrity": "6aba6f6c48301bc3563e790e8f340dc5be72718511b64d9e1b5bcb551d72dbbf",
       "dependencies": [
-        "jsr:@mage/app@~0.6.1",
+        "jsr:@mage/app@~0.7.1",
         "jsr:@std/path"
       ]
     },
@@ -68,9 +74,6 @@
         "jsr:@preact-icons/common",
         "npm:preact@10.22.1"
       ]
-    },
-    "@standard-schema/spec@1.0.0": {
-      "integrity": "4f20bbcf34e92b92f8c01589b958abc7c87385fa9a96170cecdc643d4d5737c0"
     },
     "@std/cache@0.1.3": {
       "integrity": "8d3ab61d994d0915295048999f34a8ce2280f0e4d1f4cccb08c9e3d297c0c6ec"
@@ -381,10 +384,10 @@
     "picomatch@2.3.1": {
       "integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="
     },
-    "preact-render-to-string@6.5.13_preact@10.26.2": {
+    "preact-render-to-string@6.5.13_preact@10.22.1": {
       "integrity": "sha512-iGPd+hKPMFKsfpR2vL4kJ6ZPcFIoWZEcBf0Dpm3zOpdVvj77aY8RlLiQji5OMrngEyaxGogeakTb54uS2FvA6w==",
       "dependencies": [
-        "preact@10.26.2"
+        "preact@10.22.1"
       ]
     },
     "preact@10.22.1": {
@@ -414,9 +417,9 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@mage/app@~0.6.3",
-      "jsr:@mage/preact@~0.1.5",
-      "jsr:@mage/tailwindcss@~0.2.2",
+      "jsr:@mage/app@~0.7.1",
+      "jsr:@mage/preact@0.2",
+      "jsr:@mage/tailwindcss@~0.2.4",
       "jsr:@preact-icons/fa@^1.0.12",
       "npm:@heroicons/react@^2.2.0",
       "npm:@preact/signals@^2.0.1",
